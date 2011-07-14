@@ -1,0 +1,33 @@
+# .screenrc for Adam DeConinck
+#     derived from .screenrc provided in Linux Cluster Tutorial at SC10.
+# Version for server side (red bar, Ctrl-a escape key)
+
+startup_message off
+shelltitle $HOST
+activity "activity: window ~%"  # Message when activity occurs in a window
+deflogin off                    # Do not register the window in utmp
+
+autodetach on
+
+hardstatus on
+hardstatus alwayslastline
+#hardstatus string "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..G} %H %{..Y} %m/%d %C%a "
+
+# hardstatus background set to red on server-side.
+hardstatus string "%{.rW}%-w%{.gW}%n %t%{-}%+w %=%{..G} %H %{..Y} %m/%d %C%a "
+
+defscrollback 10000
+
+# Make titles flow through screen
+# http://tldp.org/HOWTO/Bash-Prompt-HOWTO/x395.html
+# http://www.nyx.net/~ksubrama/screenrc
+
+# special xterm hardstatus: use the window title.
+termcapinfo xterm 'hs:ts=\E]2;:fs=\007:ds=\E]2;screen\007'
+#terminfo xterm 'vb=\E[?5h$<200/>\E[?5l'
+termcapinfo xterm 'vi=\E[?25l:ve=\E[34h\E[?25h:vs=\E[34l'
+
+# System-specific
+# auto-start a few screens
+chdir $HOME
+screen -t scratch
