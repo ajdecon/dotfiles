@@ -1,0 +1,19 @@
+# .bashrc for VPS
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
+
+# User specific aliases and functions
+alias ls='ls --color'
+alias truecrypt='truecrypt -m=nokernelcrypto'
+
+export EC2_HOME="$HOME/.ec2"
+export JAVA_HOME="/usr/lib/jvm/java"
+export PATH="$PATH:$EC2_HOME/bin"
+export EC2_PRIVATE_KEY="$EC2_HOME/pk-ajdecon.pem"
+export EC2_CERT="$EC2_HOME/cert-ajdecon.pem"
+
+export PATH=$PATH:$HOME/bin:$HOME/bin/go:/usr/lib/openmpi/1.4-gcc/bin
+
