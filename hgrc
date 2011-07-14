@@ -1,0 +1,6 @@
+[ui]
+username = Adam DeConinck <ajdecon@ajdecon.org>
+verbose = true
+[extensions]
+hgext.bookmarks = 
+hggit = 
