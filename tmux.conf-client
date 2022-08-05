@@ -1,0 +1,4 @@
+set -g status-style bg=blue,fg=white
+bind-key C-a last-window
+bind a send-prefix
+
